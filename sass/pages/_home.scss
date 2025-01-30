@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as v;
+
+#aurebesh {
+    text-align: center;
+}
+
+#name {
+    text-align: center;
+    color: v.$primary-color;
+}
+
+.info-box {
+
+    padding: 30px;
+}
+
+.info {
+    border: 3px solid v.$primary-color;
+    height: 600px;
+}
