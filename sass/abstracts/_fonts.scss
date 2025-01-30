@@ -1,0 +1,13 @@
+
+@use '../abstracts/variables' as v;
+
+
+body {
+    font-family: v.$body-font-family;
+}
+
+#aurebesh {
+    font-family:"aurebesh", sans-serif;
+    src: url(../fonts/Aurebesh.otf) format(otf);
+    color: #ffffff;
+}
