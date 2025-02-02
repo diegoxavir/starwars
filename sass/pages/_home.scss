@@ -4,9 +4,14 @@
     text-align: center;
 }
 
-#name {
+.name {
     text-align: center;
     color: v.$primary-color;
+    list-style: none;
+}
+
+ul {
+    padding: 0px;
 }
 
 .info-box {
@@ -17,4 +22,8 @@
 .info {
     border: 3px solid v.$primary-color;
     height: 600px;
+}
+
+a {
+    cursor: pointer;
 }

@@ -2,8 +2,9 @@
 @use '../abstracts/variables' as v;
 
 
-body {
+body, a {
     font-family: v.$body-font-family;
+    color: v.$primary-color;
 }
 
 #aurebesh {
