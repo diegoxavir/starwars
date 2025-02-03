@@ -27,3 +27,25 @@ ul {
 a {
     cursor: pointer;
 }
+
+.name {
+    padding: 2.5px 0;
+}
+
+.movie-heading {
+    padding: 20px 0px 5px;
+}
+
+@media screen and (min-width: 1200px) {
+    .info-con {
+        border: solid 5px v.$primary-color;
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+}
