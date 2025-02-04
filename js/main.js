@@ -73,6 +73,10 @@ function getFilms(e) {
 
                     movieHeading.innerHTML = response.title;
                     titleCrawl.innerHTML = response.opening_crawl;
+                   
+                    const posterSrc = `images/${response.episode_id}.jpg`;
+                    moviePoster.setAttribute("src", posterSrc);
+                    moviePoster.setAttribute("alt", `Poster for ${response.title}`);
 
                     // Add the movie info to the container
                     infoCon.appendChild(clone);
