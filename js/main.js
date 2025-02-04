@@ -3,10 +3,11 @@ const characterBox = document.querySelector("#character-box");
 const infoTemplate = document.querySelector("#info-template");
 const infoCon = document.querySelector(".info-con");
 const loader = document.querySelector("#loader");
+const loaderCharacters = document.querySelector("#loader-1");
 const baseUrl = "https://swapi.dev/api/";
 
 function getNames() {
-
+    loaderCharacters.classList.remove("hidden");
     
     fetch(`${baseUrl}people`)
     .then(response => response.json())
@@ -27,6 +28,7 @@ function getNames() {
         })
 
         characterBox.appendChild(ul);
+        loaderCharacters.classList.add("hidden");
     })
 
     .then(function() {
