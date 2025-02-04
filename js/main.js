@@ -42,7 +42,8 @@ function getNames() {
 
         const errorMsg = document.createElement("p");
         errorMsg.textContent = "looks like something went wrong. Check your connection, you may be in a different galaxy"
-        const container = document.querySelectorAll(".error-con");
+        const container = document.querySelector(".error-con");
+        loaderCharacters.classList.add("hidden");
 
         container.appendChild(errorMsg);
 
@@ -57,7 +58,7 @@ function getFilms(e) {
     // Clear previous content
     infoCon.innerHTML = "";
 
-    if (filmUrls) {
+ 
         loader.classList.remove("hidden");
         const urls = filmUrls.split(",");
 
@@ -75,20 +76,19 @@ function getFilms(e) {
 
                     // Add the movie info to the container
                     infoCon.appendChild(clone);
+                    loader.classList.add("hidden");
                 })
                 .catch(function (err) {
-                    infoCon.innerHTML = `<p> No info available for this character </p>`;
-                    console.log(err);
-                })
-                .finally(() => {
-                    // Hide the loader after all requests have finished
+                    const errorMsg = document.createElement("p");
+                    errorMsg.textContent = "looks like something went wrong. Check your connection, you may be in a different galaxy"
+                    const container = document.querySelector(".error-con-posters");
                     loader.classList.add("hidden");
-                });
+            
+                    container.appendChild(errorMsg);
+                })
+                
         });
-    } else {
-        infoCon.innerHTML = `<p> No films available for this character </p>`;
-        loader.classList.add("hidden");
-    }
+    
 }
 
 
