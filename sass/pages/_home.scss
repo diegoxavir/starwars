@@ -37,7 +37,8 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
-    .info-con {
+    .info-box {
+        margin-top: 3em;
         border: solid 5px v.$primary-color;
         padding: 15px;
     }

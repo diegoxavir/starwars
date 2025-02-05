@@ -23,6 +23,17 @@ function getNames() {
             const a = document.createElement("a");
             a.textContent = name["name"];
             a.dataset.movie = name["films"];
+
+             // Create image for each character
+             const characterImg = document.createElement("img");
+             const characterSrc = `images/person${name.id}.jpg`;  // assuming `name.id` corresponds to the person number in the image filename
+             characterImg.setAttribute("src", characterSrc);
+             characterImg.setAttribute("alt", `Image of ${name.name}`);
+ 
+             characterImg.classList.add("character-img");
+             ul.classList.add("characters");
+
+             li.appendChild(characterImg);
             li.appendChild(a);
             ul.appendChild(li);
         })
@@ -74,7 +85,7 @@ function getFilms(e) {
                     movieHeading.innerHTML = response.title;
                     titleCrawl.innerHTML = response.opening_crawl;
                    
-                    const posterSrc = `images/${response.episode_id}.jpg`;
+                    const posterSrc = `images/poster${response.episode_id}.jpg`;
                     moviePoster.setAttribute("src", posterSrc);
                     moviePoster.setAttribute("alt", `Poster for ${response.title}`);
 
