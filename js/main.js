@@ -30,7 +30,7 @@ function getNames() {
 
              // Create image for each character
              const characterImg = document.createElement("img");
-             const characterSrc = `images/person${index + 1}.jpg`; 
+             const characterSrc = `images/person${index + 1}.png`; 
              characterImg.setAttribute("src", characterSrc);
              characterImg.setAttribute("alt", `Image of ${name.name}`);
              characterImg.classList.add("character-img");
