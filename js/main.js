@@ -16,7 +16,7 @@ function getNames() {
         const names = response.results
         const ul = document.createElement("ul");
 
-        names.forEach(name => {
+        names.forEach((name, index) => {
             const li = document.createElement("li");
             li.classList.add("name");
 
@@ -26,7 +26,7 @@ function getNames() {
 
              // Create image for each character
              const characterImg = document.createElement("img");
-             const characterSrc = `images/person${name.id}.jpg`;  // assuming `name.id` corresponds to the person number in the image filename
+             const characterSrc = `images/person${index + 1}.jpg`; 
              characterImg.setAttribute("src", characterSrc);
              characterImg.setAttribute("alt", `Image of ${name.name}`);
  
