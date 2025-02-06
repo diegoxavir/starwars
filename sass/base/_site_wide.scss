@@ -19,3 +19,10 @@ html {
 .info-header{
     text-align: center;
 }
+
+@media screen and (min-width: 1200px) {
+    #loader {
+        margin-left: 280px;
+        margin-bottom: 1000px;
+    }
+}
