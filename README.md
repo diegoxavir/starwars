@@ -10,11 +10,11 @@ A website made to display the power of Fetch API, and the conversion to JSON to 
 2. open zip and run a live local host to see the site in your browser
 
 ## Features 
-An array of characters from the Star Wars franchise
-GSAP fade animations
-Fetch API functions to add characters and movie information into the DOM
-Scrool functionality
-Loading/error functionality
+1. An array of characters from the Star Wars franchise
+2. GSAP fade animations
+3. Fetch API functions to add characters and movie information into the DOM
+4. Scrool functionality
+5. Loading/error functionality
 
 ## Licence
 MIT licence
