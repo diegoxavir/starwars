@@ -49,10 +49,6 @@ a {
         padding: 10px 0;
     }
 
-    a {
-        display: block;
-    }
-
 }
 
 //character
@@ -61,7 +57,7 @@ a {
     width: 200px;
 }
 
-//scroll through 
+//scroll through for mobile 
 
 .character-container {
     ul{
@@ -77,7 +73,7 @@ a {
 #character-box {
     display: flex;
     overflow-x: hidden;
-    gap: 20px;
+    gap: 24px;
     padding: 10px;
     scroll-behavior: smooth;
     width: 200px;
@@ -115,4 +111,8 @@ a {
 
 .arrow.right {
     right: 50px;
+}
+
+@media screen {
+    
 }
