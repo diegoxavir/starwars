@@ -20,6 +20,10 @@ function getNames() {
             const li = document.createElement("li");
             li.classList.add("name");
 
+            //creating a wrapper for my content so I can style each indiidual character
+            const characterWrapper = document.createElement("div");
+            characterWrapper.classList.add('character-wrapper');
+
             const a = document.createElement("a");
             a.textContent = name["name"];
             a.dataset.movie = name["films"];
@@ -29,13 +33,15 @@ function getNames() {
              const characterSrc = `images/person${index + 1}.png`; 
              characterImg.setAttribute("src", characterSrc);
              characterImg.setAttribute("alt", `Image of ${name.name}`);
- 
              characterImg.classList.add("character-img");
-             ul.classList.add("characters");
+            
 
-             li.appendChild(characterImg);
-            li.appendChild(a);
-            ul.appendChild(li);
+             characterWrapper.appendChild(characterImg);
+            characterWrapper.appendChild(a);
+          
+              // Append the wrapper div to the list item (li)
+              li.appendChild(characterWrapper);
+              ul.appendChild(li);
         })
 
         characterBox.appendChild(ul);
@@ -59,6 +65,17 @@ function getNames() {
         container.appendChild(errorMsg);
 
     })
+
+    // Scroll functions for the arrows
+document.querySelector(".arrow.left").addEventListener("click", () => {
+    const box = document.getElementById("character-box");
+    box.scrollBy({ left: -200, behavior: 'smooth' });
+});
+
+document.querySelector(".arrow.right").addEventListener("click", () => {
+    const box = document.getElementById("character-box");
+    box.scrollBy({ left: 200, behavior: 'smooth' });
+});
 
 
 
