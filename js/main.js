@@ -33,7 +33,7 @@ function getNames() {
              const characterSrc = `images/person${index + 1}.png`; 
              characterImg.setAttribute("src", characterSrc);
              characterImg.setAttribute("alt", `Image of ${name.name}`);
-             characterImg.classList.add("character-img");
+             characterImg.classList.add("character-img", "gsap-fade");
             
 
              characterWrapper.appendChild(characterImg);
@@ -46,7 +46,11 @@ function getNames() {
 
         characterBox.appendChild(ul);
         loaderCharacters.classList.add("hidden");
+
+        fadeAni();
     })
+
+
 
     .then(function() {
         const links = document.querySelectorAll("#character-box li a");
@@ -117,12 +121,28 @@ function getFilms(e) {
                     loader.classList.add("hidden");
             
                     container.appendChild(errorMsg);
-                })
+                });
                 
         });
     
 }
+function fadeAni() {
+    gsap.registerPlugin(ScrollTrigger);
 
+    const fadeDivs = document.querySelectorAll(".gsap-fade");
+
+    fadeDivs.forEach(fadeDiv => {
+        gsap.fromTo(
+            fadeDiv,
+            { autoAlpha: 0, x: -100 },
+            {
+                autoAlpha: 1,
+                x: 0,
+                duration: 0.5,
+            }
+        );
+    });
+}
 
 getNames();
 })();

@@ -26,6 +26,8 @@ ul {
 
 a {
     cursor: pointer;
+    font-weight: 800;
+    font-size: 1.2em;
 }
 
 .name {
@@ -34,27 +36,6 @@ a {
 
 .movie-heading {
     padding: 20px 0px 5px;
-}
-
-@media screen and (min-width: 1200px) {
-    .info-box {
-        margin-top: 3em;
-        border: solid 5px v.$primary-color;
-        padding: 15px;
-    }
-
-    .name {
-        font-size: 1.5em;
-        font-weight: 700;
-        padding: 10px 0;
-    }
-
-}
-
-//character
-
-.character-img{
-    width: 200px;
 }
 
 //scroll through for mobile 
@@ -88,21 +69,22 @@ a {
 }
 
 .character-img {
-    width: 100%;
+    width: 90%;
     height: auto;
     border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .arrow {
     position: absolute;
-    top: 35%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    top: 19%;
+    background-color: rgba(91, 255, 247, 0.123);
+    color: rgb(128, 219, 255);
     border: none;
     padding: 10px;
     cursor: pointer;
     z-index: 10;
+    font-size: 1.5em;
 }
 
 .arrow.left {
@@ -113,6 +95,36 @@ a {
     right: 50px;
 }
 
-@media screen {
-    
+
+@media screen and (min-width: 1200px) {
+    .info-box {
+        margin-top: 3em;
+        border: solid 5px v.$primary-color;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .character-container {
+        ul{ 
+            display: block;
+        }
+    }
+
+    .character-img{
+        width: 50%;
+    }
+
+    .arrow {
+        display: none;
+    }
+
 }
+
+//character
+
