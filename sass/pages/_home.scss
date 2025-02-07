@@ -77,25 +77,25 @@ a {
 
 .arrow {
     position: absolute;
-    top: 19%;
+    top: 30%;
     background-color: rgba(91, 255, 247, 0.123);
     color: rgb(128, 219, 255);
     border: none;
     padding: 10px;
     cursor: pointer;
-    z-index: 10;
     font-size: 1.5em;
 }
 
 .arrow.left {
-    left: 50px;
+    left: 100px;
 }
 
 .arrow.right {
-    right: 50px;
+    right: 100px;
 }
 
 
+/* Desktop Styles */
 @media screen and (min-width: 1200px) {
     .info-box {
         margin-top: 3em;
@@ -111,20 +111,31 @@ a {
     }
 
     .character-container {
-        ul{ 
-            display: block;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            gap: 24px;
+            flex-wrap: nowrap; 
+            overflow-x: auto; 
+            padding: 0; 
+            margin: 0;
         }
     }
 
-    .character-img{
-        width: 50%;
+    #character-box {
+        width: 100%; 
+        max-width: 100%;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .character-img {
+        width: 25%; 
+        max-width: 200px;
     }
 
     .arrow {
-        display: none;
+        display: none; 
     }
-
 }
-
-//character
-

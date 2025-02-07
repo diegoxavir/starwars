@@ -90,41 +90,47 @@ function getFilms(e) {
     // Clear previous content
     infoCon.innerHTML = "";
 
- 
-        loader.classList.remove("hidden");
-        const urls = filmUrls.split(",");
+    loader.classList.remove("hidden");
+    const urls = filmUrls.split(",");
 
-        urls.forEach(url => {
-            fetch(url)
-                .then(response => response.json())
-                .then(function (response) {
-                    const clone = infoTemplate.content.cloneNode(true);
-                    const movieHeading = clone.querySelector(".movie-heading");
-                    const titleCrawl = clone.querySelector(".title-crawl");
-                    const moviePoster = clone.querySelector(".movie-poster");
+    urls.forEach(url => {
+        fetch(url)
+            .then(response => response.json())
+            .then(function (response) {
+                const clone = infoTemplate.content.cloneNode(true);
+                const movieHeading = clone.querySelector(".movie-heading");
+                const titleCrawl = clone.querySelector(".title-crawl");
+                const moviePoster = clone.querySelector(".movie-poster");
 
-                    movieHeading.innerHTML = response.title;
-                    titleCrawl.innerHTML = response.opening_crawl;
-                   
-                    const posterSrc = `images/poster${response.episode_id}.jpg`;
-                    moviePoster.setAttribute("src", posterSrc);
-                    moviePoster.setAttribute("alt", `Poster for ${response.title}`);
+                movieHeading.innerHTML = response.title;
+                titleCrawl.innerHTML = response.opening_crawl;
 
-                    // Add the movie info to the container
-                    infoCon.appendChild(clone);
-                    loader.classList.add("hidden");
-                })
-                .catch(function (err) {
-                    const errorMsg = document.createElement("p");
-                    errorMsg.textContent = "looks like something went wrong. Check your connection, you may be in a different galaxy"
-                    const container = document.querySelector(".error-con-posters");
-                    loader.classList.add("hidden");
-            
-                    container.appendChild(errorMsg);
-                });
-                
-        });
-    
+                const posterSrc = `images/poster${response.episode_id}.jpg`;
+                moviePoster.setAttribute("src", posterSrc);
+                moviePoster.setAttribute("alt", `Poster for ${response.title}`);
+
+                // Create a div to wrap each film's content (title, crawl, poster)
+                const filmContainer = document.createElement("div");
+                filmContainer.classList.add("m-col-span-6", "l-col-span-4", "col-span-full");
+
+                // Append the cloned content into the new div (filmContainer)
+                filmContainer.appendChild(clone);
+
+                // Add the filmContainer (which holds the film's content) to the infoCon
+                infoCon.appendChild(filmContainer);
+
+                loader.classList.add("hidden");
+            })
+            .catch(function (err) {
+                const errorMsg = document.createElement("p");
+                errorMsg.textContent = "Looks like something went wrong. Check your connection, you may be in a different galaxy."
+                const container = document.querySelector(".error-con-posters");
+                loader.classList.add("hidden");
+
+                container.appendChild(errorMsg);
+            });
+    });
+
 }
 function fadeAni() {
     gsap.registerPlugin(ScrollTrigger);

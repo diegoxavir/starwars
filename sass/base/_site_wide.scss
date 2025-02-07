@@ -20,6 +20,19 @@ html {
     text-align: center;
 }
 
+header{
+    place-items: center;
+    img{
+        width: 150px;
+        height: 450x;
+        }
+}
+
+.movie-poster{
+    width: 320px;
+    height: 450px;
+}
+
 @media screen and (min-width: 1200px) {
     #loader {
         margin-left: 280px;
