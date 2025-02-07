@@ -31,7 +31,20 @@ header{
 .movie-poster{
     width: 320px;
     height: 450px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5em;
 }
+
+.movie-heading{
+    text-align: center;
+}
+
+.title-crawl{
+    padding: 2em;
+}
+
 
 @media screen and (min-width: 1200px) {
     #loader {
